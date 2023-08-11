@@ -4,13 +4,13 @@ Gadgetron (https://github.com/gadgetron) is an open-source software framework de
 
 Integrating the SVRTK reconstruction within the Gadgetron framework allows to perform the slice-to-volume reconstruction process (conversion of 2D image slices into a complete 3D volume), becoming a modular component within Gadgetron's data processing pipelines. This integration allows exporting the raw acquisitions to an external server to first be reconstructed into 2D image slices, stored in the NIFTI format, and once all HASTE sequences have been acquired the SVRTK docker is launched to perform slice-to-volume reconstruction. The main advantages of this implementation are the automatization of SVRTK, reducing the workload of radiographers, and the availability of the resulting 3D reconstructions in the duration of the fetal scan.
 
+The repository and the code were created by Sara Neves Silva.
+
 ![diagram-svrtk-gadgetron](https://github.com/SVRTK/gadgetron-svrtk-integration/assets/72754856/1b1f3e79-8cca-40cb-9a35-d956d70f8415)
 
 ## Requirements
 
 To set up the Gadgetron development environment, please follow the instructions provided here https://github.com/hansenms/gadgetron/tree/hansenms/conda-install.
-
-The repository and the code were created by Sara Neves Silva.
 
 ## Testing the Pipeline Outside of the Scanner
 
