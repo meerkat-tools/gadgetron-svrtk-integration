@@ -23,7 +23,7 @@ Example:
 ```bash
 siemens_to_ismrmrd -f meas_MID00335_FID24113_haste_cor_wholeuterus.dat --skipSyncData -x IsmrmrdParameterMap_Siemens_NX50.xsl -z 2 -o meas_MID00335_FID24113_haste_cor_wholeuterus.h5
 ```
-Make sure to use the provided parameter style sheet (IsmrmrdParameterMap_Siemens_NX50.xsl) if converting a dataset acquired in a Siemens scanner of software version NX50.
+Make sure to use the provided parameter style sheet (IsmrmrdParameterMap_Siemens_NX50.xsl) if converting a dataset acquired in a Siemens scanner of software version NX50. If the dataset was acquired in a scanner of version below NX50, please use the IsmrmrdParameterMap_Siemens_NX.xsl style sheet.
 
 ### Step 2: 
 Copy the converted ISMRMRD dataset (with .h5 extension) to /miniconda3/envs/gadgetron/share/gadgetron/config.
