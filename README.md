@@ -16,9 +16,41 @@ To set up the Gadgetron development environment, please follow the instructions 
 
 Please refer to the instructions from https://github.com/gadgetron/GadgetronOnlineClass to get familiarized with the Gadgetron framework. Follow the steps below to test the Gadgetron pipeline in your machine before running it in the scanner.
 
-### Step 1: Convert the raw Siemens data to ISMRMRD format (required by Gadgetron):
+### Step 1: 
+Open a terminal in your Ubuntu machine and activate the Gadgetron development environment. In this terminal, convert the raw Siemens data to ISMRMRD format (required by Gadgetron):
 
-1) Example:
+Example:
 ```bash
 siemens_to_ismrmrd -f meas_MID00335_FID24113_haste_cor_wholeuterus.dat --skipSyncData -x IsmrmrdParameterMap_Siemens_NX50.xsl -z 2 -o meas_MID00335_FID24113_haste_cor_wholeuterus.h5
+```
+Make sure to use the provided parameter style sheet (IsmrmrdParameterMap_Siemens_NX50.xsl) if converting a dataset acquired in a Siemens scanner of software version NX50.
+
+### Step 2: 
+Copy the converted ISMRMRD dataset (with .h5 extension) to /miniconda3/envs/gadgetron/share/gadgetron/config.
+
+### Step 3: 
+Copy the provided configuration gadgetron_svrtk.xml file /miniconda3/envs/gadgetron/share/gadgetron/config.
+
+### Step 4:
+Copy the Python script nifti_python_gadgetron_haste.py into /miniconda3/envs/gadgetron/share/gadgetron/python.
+
+### Step 5:
+Open a second terminal and also activate the Gadgetron development environment. Make sure both terminals are open in the same directory - this should be /config directory where both the .xml pipeline file and dataset are stored. Initialize gadgetron as follows:
+
+```bash
+gadgetron
+```
+
+You can additionally add the port where you would like to run Gadgetron.
+
+```bash
+gadgetron -p 9002
+```
+
+### Step 6: 
+You are good to go! You can now run the Gadgetron SVRTK pipeline as follows:
+
+Example:
+```bash
+gadgetron_ismrmrd_client -f meas_MID00335_FID24113_haste_cor_wholeuterus.h5 -C gadgetron_svrtk.xml -o meas_MID00335_FID24113_haste_cor_wholeuterus_r001.h5
 ```
