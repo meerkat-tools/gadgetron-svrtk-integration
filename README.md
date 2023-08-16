@@ -40,13 +40,6 @@ Open a second terminal and also activate the Gadgetron development environment. 
 ```bash
 gadgetron
 ```
-
-You can additionally add the port where you would like to run Gadgetron.
-
-```bash
-gadgetron -p 9002
-```
-
 ### Step 6: 
 You are good to go! You can now run the Gadgetron SVRTK pipeline as follows:
 
