@@ -316,14 +316,6 @@ def IsmrmrdToNiftiGadget(connection):
         logging.info("Storing each slice into the 3D data buffer...")
         im[:, :, slice] = np.squeeze(img[:, :, 0])
 
-        # rotx = acquisition.user_float[0]
-        # roty = acquisition.user_float[1]
-        # rotz = acquisition.user_float[2]
-        #
-        # cmx = acquisition.user_float[3]
-        # cmy = acquisition.user_float[4]
-        # cmz = acquisition.user_float[5]
-
         # if the whole stack of slices has been acquired >> apply network to the entire 3D volume
         if slice == nslices - 1:
             logging.info("All slices stored into the data buffer!")
